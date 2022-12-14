@@ -1,0 +1,26 @@
+<HTML>
+    <BODY>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+<div ng-app="mtt" ng-controller="mtttm" class="container mt-3">
+<h1 style="color: red">Máy tính tuổi thông minh</h1>
+<p style="color: blue;font-weight: bold">Nhập tuổi của bạn</p>
+<p><input type="number" ng-model="tuoi" placeholder="Năm nay bạn bao nhiêu tuổi ?" class="form-control"></p>
+<p style="text-align: center"><button ng-click="myFunc()" class="btn btn-success">Tính tuổi của bạn</button></p>
+<div class="alert alert-success" ng-show="showMe">
+  Vâng, tuổi của bạn là: {{tuoi}}
+
+  </div>
+
+</div>
+<script>
+var app = angular.module('mtt', []);
+app.controller('mtttm', function($scope) {
+    $scope.showMe = false;
+    $scope.myFunc = function() {
+        $scope.showMe = !$scope.showMe;
+    }
+});
+</script>
+    </BODY>
+</HTML>
